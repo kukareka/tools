@@ -66,11 +66,7 @@ if [[ "$action" == "encrypt" && ! -f "$plaintext_file" ]]; then
   exit 1
 fi
 
-ciphertext_file="$plaintext_file"
-if [[ ! ciphertext_file =~ .enc$ ]]; then
-  ciphertext_file="$plaintext_file.enc"
-fi
-
+ciphertext_file="$plaintext_file.enc"
 if [[ "$action" == "decrypt" && ! -f "$ciphertext_file" ]]; then
   echo "\"$ciphertext_file\" does not exist."
   exit 1
